@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Employees")
 public class EmployeeEntity {
     @Id
-    private Integer id;
+    private String id;
     private String name;
     private String position;
     private String office;
@@ -19,7 +19,7 @@ public class EmployeeEntity {
         this.salary = salary;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 

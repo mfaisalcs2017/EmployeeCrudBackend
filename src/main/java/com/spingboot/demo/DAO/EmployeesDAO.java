@@ -22,16 +22,16 @@ public class EmployeesDAO {
         return repository.insert(employee);
     }
 
-    public Optional<EmployeeEntity> getEmployeeById(int id) {
+    public Optional<EmployeeEntity> getEmployeeById(String id) {
         return repository.findById(id);
     }
-    public Optional<EmployeeEntity> deleteEmployeeById(int id) {
+    public Optional<EmployeeEntity> deleteEmployeeById(String id) {
         Optional<EmployeeEntity> employees = repository.findById(id);
         employees.ifPresent(employees1 -> repository.delete(employees1));
         return employees;
     }
 
-    public Optional<EmployeeEntity> updateEmployeeById(int id, EmployeeUpdatePayload employeeUpdatePayload) {
+    public Optional<EmployeeEntity> updateEmployeeById(String id, EmployeeUpdatePayload employeeUpdatePayload) {
         Optional<EmployeeEntity> employees = repository.findById(id);
         employees.ifPresent(employees1 -> employees1.setName(employeeUpdatePayload.getName()));
         employees.ifPresent(employees1 -> employees1.setOffice(employeeUpdatePayload.getOffice()));

@@ -21,15 +21,15 @@ public class EmployeeService {
         return employeesDAO.createEmployee(employee);
     }
 
-    public Optional<EmployeeEntity> getEmployeeById(int id) {
+    public Optional<EmployeeEntity> getEmployeeById(String id) {
         return employeesDAO.getEmployeeById(id);
     }
 
-    public Optional<EmployeeEntity> deleteEmployeeById(int id) {
+    public Optional<EmployeeEntity> deleteEmployeeById(String id) {
         return employeesDAO.deleteEmployeeById(id);
     }
 
-    public Optional<EmployeeEntity> updateEmployeeById(int id, EmployeeUpdatePayload employeeUpdatePayload) {
+    public Optional<EmployeeEntity> updateEmployeeById(String id, EmployeeUpdatePayload employeeUpdatePayload) {
         return employeesDAO.updateEmployeeById(id, employeeUpdatePayload);
     }
 }

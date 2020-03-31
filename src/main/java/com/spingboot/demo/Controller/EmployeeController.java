@@ -27,16 +27,16 @@ public class EmployeeController {
     }
 
     @GetMapping(value = "/{id}")
-    public Optional<EmployeeEntity> getEmployeeById(@PathVariable("id") int id) {
+    public Optional<EmployeeEntity> getEmployeeById(@PathVariable("id") String id) {
         return employeeService.getEmployeeById(id);
     }
 
     @DeleteMapping(value = "/{id}")
-    public Optional<EmployeeEntity> deleteEmployeeById(@PathVariable("id") int id) {
+    public Optional<EmployeeEntity> deleteEmployeeById(@PathVariable("id") String id) {
         return employeeService.deleteEmployeeById(id);
     }
     @PutMapping(value = "/{id}")
-    public Optional<EmployeeEntity> updateEmployeeById(@PathVariable("id") int id, @RequestBody EmployeeUpdatePayload employeeUpdatePayload) {
+    public Optional<EmployeeEntity> updateEmployeeById(@PathVariable("id") String id, @RequestBody EmployeeUpdatePayload employeeUpdatePayload) {
         return employeeService.updateEmployeeById(id, employeeUpdatePayload);
     }
 }
